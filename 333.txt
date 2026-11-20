@@ -1,0 +1,45 @@
+
+let selectedAmount = 0;
+
+function selectAmount(amount) {
+  selectedAmount = amount;
+
+  document.getElementById("customAmount").value = amount;
+
+  document.querySelectorAll(".amounts button").forEach(button => {
+    button.classList.toggle(
+      "selected",
+      Number(button.textContent.replace(" €", "")) === amount
+    );
+  });
+}
+
+function donate() {
+  const amount = Number(
+    document.getElementById("customAmount").value
+  );
+
+  if (!Number.isFinite(amount) || amount < 1) {
+    alert("Bitte gib einen gültigen Spendenbetrag ein.");
+    return;
+  }
+
+  alert(
+    "Vielen Dank für deine Unterstützung! ❤️\n" +
+    "Ausgewählter Betrag: " + amount.toFixed(2) + " €\n\n" +
+    "Die Zahlungsfunktion ist noch nicht eingerichtet."
+  );
+}
+
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+
+function login() {
+  document.getElementById("loginMessage").textContent =
+    "Ein echter Login ist noch nicht eingerichtet. Bitte verwende keine echten Zugangsdaten.";
+}

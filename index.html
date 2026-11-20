@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unterstütze Bruno mit deiner Spende. Jeder Beitrag hilft!">
+  <title>Spendenlink für Bruno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="#" class="logo">❤️ Bruno helfen</a>
+  <button class="login-button" onclick="openLogin()">Login</button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <span class="tag">❤️ Gemeinsam helfen</span>
+      <h1>Gemeinsam können wir <span>Bruno</span> helfen.</h1>
+      <p>
+        Jede Unterstützung zählt. Mit deiner Spende kannst du
+        Bruno helfen und einen wichtigen Beitrag leisten.
+      </p>
+      <a href="#spenden" class="donate-button">Jetzt helfen ❤️</a>
+    </div>
+    <div class="heart">❤️</div>
+  </section>
+
+  <section class="donation-section" id="spenden">
+    <h2>Deine Unterstützung zählt</h2>
+    <p>Jeder Beitrag ist willkommen und macht einen Unterschied.</p>
+
+    <div class="donation-card">
+      <div class="card-icon">💝</div>
+      <h3>Für Bruno spenden</h3>
+      <p>Wähle einen Spendenbetrag und unterstütze Bruno.</p>
+
+      <div class="amounts">
+        <button onclick="selectAmount(5)">5 €</button>
+        <button onclick="selectAmount(10)">10 €</button>
+        <button onclick="selectAmount(20)">20 €</button>
+        <button onclick="selectAmount(50)">50 €</button>
+      </div>
+
+      <input id="customAmount" type="number"
+        min="1" placeholder="Eigener Betrag in Euro">
+
+      <button class="donate-button full" onclick="donate()">
+        Jetzt spenden
+      </button>
+      <small>Die Zahlungsfunktion muss noch mit einem Zahlungsanbieter verbunden werden.</small>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Warum Bruno helfen?</h2>
+    <p>
+      Hinter jeder Spende steckt ein Zeichen von Mitgefühl,
+      Zusammenhalt und Unterstützung. Danke, dass du Bruno hilfst!
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Spendenlink für Bruno</p>
+  <p>Mit ❤️ erstellt</p>
+</footer>
+
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeLogin()">×</button>
+    <h2>Login</h2>
+    <p>Willkommen zurück!</p>
+    <input id="username" type="text" placeholder="Benutzername">
+    <input id="password" type="password" placeholder="Passwort">
+    <button class="donate-button full" onclick="login()">Anmelden</button>
+    <p id="loginMessage"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
